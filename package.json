@@ -1,0 +1,22 @@
+{
+  "name": "baekjoon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muse9312/baekjoon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muse9312/baekjoon/issues"
+  },
+  "homepage": "https://github.com/muse9312/baekjoon#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  }
+}
