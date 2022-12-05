@@ -1,13 +1,9 @@
 const fs = require('fs');
 
-const inputData = fs
-  .readFileSync(process.platform === "linux" ? 0 : 'ex.txt')
-  .toString()
-  .split("\n")
-  .map((value) => +value);
-
-const [a, b] = inputData;
-
+const filePath = process.platform === 'linux' ? 0 : 'ex.txt';
+let input = require('fs').readFileSync(filePath).toString().split('\n');
+const a = parseInt(input[0]);
+const b = parseInt(input[1]);
 function quadrant(a, b) {
     if (a > 0 && b > 0) {
       return 1;
