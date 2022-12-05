@@ -1,13 +1,9 @@
-const fs = require("fs");
+const fs = require('fs');
 
-const inputData = fs
-  .readFileSync(
-    process.platform === "linux" ? 0 : "../../../../index.txt"
-  )
-  .toString()
-  .split(" ")
-  .map((value) => +value);
+const filePath = process.platform === 'linux' ? 0 : 'ex.txt';
+const input = fs.readFileSync(filePath).toString().trim().split(" ");
 
-const [a, b] = inputData;
+const a = parseInt(input[0]);
+const b = parseInt(input[1]);
 
-console.log(a / b);
+console.log(a/b);
