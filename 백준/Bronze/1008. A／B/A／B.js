@@ -2,7 +2,7 @@ const fs = require("fs");
 
 const inputData = fs
   .readFileSync(
-    process.platform === "linux" ? "/dev/stdin" : "../../../../index.txt"
+    process.platform === "linux" ? 0 : "../../../../index.txt"
   )
   .toString()
   .split(" ")
