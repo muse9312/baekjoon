@@ -26,6 +26,7 @@
 // const n_arr = input.slice(1, n+1);
 // const [m, ...m_arr] = input.slice(n+1);
 
+// ================================================  1008  ================================================
 
 // const fs = require('fs');
 
@@ -37,6 +38,7 @@
 
 // console.log(a/b);
 
+// ================================================ 14681  ================================================
 
 
 // const fs = require('fs');
@@ -60,7 +62,7 @@
 //   console.log(quadrant(a, b));
 
 
-
+// ================================================  4344  ================================================
 
 // 5
 // 5 50 50 70 80 100
@@ -70,39 +72,52 @@
 // 9 100 99 98 97 96 95 94 93 91
 
 
+// const fs = require('fs');
+
+// const filePath = process.platform === 'linux' ? 0 : 'ex.txt';
+// // 여러 줄의 값들을 입력받을 때
+// const input = fs.readFileSync(filePath).toString().trim().split('\n');
+
+
+// const tcNum = +input[0]
+
+// for (let i = 1; i <= tcNum; i++) {
+    
+//     const cn = input[i].split(' ').map(Number); // 각 행의 숫자들
+//     const sn = cn[0]; // 학생 수
+    
+//     let sum = 0; // 초기화
+    
+
+//     for (let j = 1; j <= sn; j++) { 
+//         sum += cn[j]; // 각 숫자들 합 
+//       }
+
+//     const ag = sum / sn // 평균
+
+//     let overagStd = 0; // 평균보다 높은 학생 수 (초기화)
+
+//     for (let k = 1; k <= sn; k++) {
+//         if (cn[k] > ag) {
+//             overagStd++;
+//         }
+        
+//     }
+
+//     let result = (overagStd /  sn * 100).toFixed(3);
+//     console.log(result + '%');
+
+
+// }
+
 const fs = require('fs');
 
 const filePath = process.platform === 'linux' ? 0 : 'ex.txt';
 // 여러 줄의 값들을 입력받을 때
-const input = fs.readFileSync(filePath).toString().trim().split('\n');
+const input = fs.readFileSync(filePath).toString().split(" ");
 
+const A = input[0]; // 아침에 이동하는 수
+const B = input[1]; // 밤에 미끄러지는 수
+const V = input[2]; // 나무 막대 높이
 
-const tcNum = +input[0]
-
-for (let i = 1; i <= tcNum; i++) {
-    
-    const cn = input[i].split(' ').map(Number); // 각 행의 숫자들
-    const sn = cn[0]; // 학생 수
-    let sum = 0; // 초기화
-    
-
-    for (let j = 1; j <= sn; j++) { 
-        sum += cn[j]; // 각 숫자들 합 
-      }
-
-    const ag = sum / sn // 평균
-
-    let overagStd = 0; // 평균보다 높은 학생 수 (초기화)
-
-    for (let k = 1; k <= sn; k++) {
-        if (cn[k] > ag) {
-            overagStd++;
-        }
-        
-    }
-
-    let result = (overagStd /  sn * 100).toFixed(3);
-    console.log(result + '%');
-
-
-}
+console.log(Math.ceil((V - B) / (A - B)));
