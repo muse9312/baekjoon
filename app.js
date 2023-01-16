@@ -110,14 +110,40 @@
 
 // }
 
+// <script type = text/javascript>
+
+
+// ================================================  1978  ================================================
+
+// 4
+// 1 3 5 7
+
+
 const fs = require('fs');
 
 const filePath = process.platform === 'linux' ? 0 : 'ex.txt';
 // 여러 줄의 값들을 입력받을 때
-const input = fs.readFileSync(filePath).toString().split(" ");
+const input = fs.readFileSync(filePath).toString().trim().split('\n');
 
-const A = input[0]; // 아침에 이동하는 수
-const B = input[1]; // 밤에 미끄러지는 수
-const V = input[2]; // 나무 막대 높이
 
-console.log(Math.ceil((V - B) / (A - B)));
+const nums = input[1].split(' ').map(Number);
+let total = 0; // 총 소수의 개수
+
+//
+nums.forEach(function(n) {
+    let decimal = true; // boolean
+    if (n === 1) {
+        decimal = false;
+      }
+      for (let i = 2; i < n; i++) {
+        if (n % i === 0) {
+            decimal = false;
+        }
+      }
+      decimal === true && total++;
+})
+
+
+
+console.log(total); 
+

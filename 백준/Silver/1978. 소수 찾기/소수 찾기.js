@@ -8,17 +8,20 @@ const input = fs.readFileSync(filePath).toString().trim().split('\n');
 const nums = input[1].split(' ').map(Number);
 let total = 0; // 총 소수의 개수
 
+//
 nums.forEach(function(n) {
-    let isPrime = true; // boolean
+    let decimal = true; // boolean
     if (n === 1) {
-        isPrime = false;
+        decimal = false;
       }
       for (let i = 2; i < n; i++) {
-        if (n % i === 0) isPrime = false;
+        if (n % i === 0) {
+            decimal = false;
+        }
       }
-      isPrime === true && total++;
+      decimal === true && total++;
 })
 
 
 
-console.log(total);
+console.log(total); 
